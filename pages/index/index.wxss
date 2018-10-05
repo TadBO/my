@@ -1,0 +1,62 @@
+/**index.wxss**/
+.top {
+  padding-left: 12rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top text {
+  font-size: 28rpx;
+  color: #101010;
+}
+
+.top input {
+  width: 400rpx;
+  height: 56rpx;
+  line-height: 60rpx;
+  border: 1px solid #bbb;
+  padding-left: 40rpx;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  margin-left: 12rpx;
+}
+
+.top .icon-xiajiantou {
+  font-size: 36rpx;
+  color: #101010;
+}
+
+.top input::placeholder {
+  color: #938E8E;
+}
+
+.top .search {
+  position: relative;
+}
+
+.search .iconfont {
+  position: absolute;
+  font-size: 30rpx;
+  color: #8F8E94;
+  top: 9rpx;
+  z-index: 999;
+}
+
+.search .icon-sousuo {
+  left: 16rpx;
+}
+
+.search .icon-guanbi {
+  right: 14rpx;
+}
+
+
+.weui-navbar__item {
+  /*flex: none;*/
+  padding-right: 8rpx;
+  padding-left: 8rpx;
+}
+
+.weui-navbar__slider {
+  width: 40px;
+}
