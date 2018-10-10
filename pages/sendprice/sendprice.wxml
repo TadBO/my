@@ -1,0 +1,37 @@
+<view>
+  <view class="s-list">
+    <view class="s-item">
+      <view class="s-item_name">服务类型:</view>
+      <view class="s-item_content">家电维修</view>
+    </view>
+    <view class="s-item">
+      <view class="s-item_name">服务种类:</view>
+      <view class="s-item_content">冰箱</view>
+    </view>
+    <view class="s-item">
+      <view class="s-item_name">预约地址:</view>
+      <view class="s-item_content">浙江省浙江省浙江省浙江省浙江省浙江省浙江省</view>
+    </view>
+    <view class="s-item">
+      <view class="s-item_name">预约时间:</view>
+      <view class="s-item_content">2018-09-10 18:22:44</view>
+    </view>
+    <view class="s-item">
+      <view class="s-item_name">联系人:</view>
+      <view class="s-item_content">张三</view>
+    </view>
+    <view class="s-item">
+      <view class="s-item_name">状态:</view>
+      <view class="s-item_content">紧急</view>
+    </view>
+    <view class="s-item">
+      <view class="s-item_name">备注:</view>
+      <view class="s-item_content">冰箱坏了,不制冷</view>
+    </view>
+  </view>
+  <view class="s-bottom">
+    <input type="text" value="100" class="s_input"></input>
+
+    <button class="s-btn">报价</button>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+/* pages/sendorder/sendorder.wxss */
+.weui-input{
+  text-align: right;
+}
+.s-weui-cell:before{
+  border-top:0;
+}

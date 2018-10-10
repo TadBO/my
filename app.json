@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/sendorder/sendorder",
     "pages/index/index",
     "pages/center",
     "pages/center/center",
     "pages/send/send",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/sendprice/sendprice"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,7 +18,7 @@
     "selectedColor": "#8BC34A",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/sendorder/sendorder",
         "text": "首页",
         "iconPath": "images/index.png",
         "selectedIconPath": "images/index_1.png"

@@ -1,0 +1,47 @@
+.s-list{
+  border-top:2rpx solid #eee;
+  border-bottom:2rpx solid #eee;
+  padding-left:20rpx;
+}
+.s-item{
+  position:relative;
+  border-bottom:2rpx solid #eee;
+  padding:20rpx 30rpx 20rpx 0;
+}
+.s-item_name{
+  width:200rpx;
+  position:absolute;
+  left:0;
+  top:20rpx;
+}
+.s-item_content{
+  margin-left:200rpx;
+  text-align: right;
+  color: #333;
+}
+.s-list .s-item:last-child{
+  border:0;
+}
+.s-bottom{
+  border-top:20rpx solid #eee;
+}
+.s-btn{
+  background:#1AAD19;
+  color:#fff;
+  width:80%;
+  margin:auto;
+  height:70rpx;
+  line-height:70rpx;
+  font-size: 28rpx;
+}
+.s-btn:active{
+  background:#179B16;
+}
+.s_input{
+  border:1px solid #999;
+  width:80%;
+  padding:10rpx 20rpx;
+  margin: 20rpx auto;
+  border-radius: 10rpx;
+
+}
