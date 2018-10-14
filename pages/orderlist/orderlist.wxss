@@ -1,0 +1,22 @@
+.m-type-list {
+  width: 120rpx;
+  height:100%;
+}
+.m-type-list ._item{
+  position:absolute;
+  right:10rpx;
+  top:30rpx;
+  color:red;
+}
+.weui-media-box__desc{
+  font-size: 28rpx;
+}
+.weui-media-box__desc ._green{
+  color:#1AAD19;
+}
+.m-img{
+  width:200rpx;
+}
+.m-img image{
+  margin-left:30rpx;width:120rpx;height:120rpx;
+}

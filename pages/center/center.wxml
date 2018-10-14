@@ -1,2 +1,55 @@
-<!--pages/center/center.wxml-->
-<text>pages/center/center.wxml</text>
+<view class="page">
+  <view class="page__bd">
+    <view class="c-head">
+      <image src="../../images/center_1.png" class="c-head_img"></image>
+      <view class="c-head_body">
+        <view>张三</view>
+        <view>账号:wx23412341234</view>
+      </view>
+    </view>
+    <view class="weui-cells weui-cells_after-title border-after-0">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">我的钱包</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">我的红包</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" style="border-bottom:20rpx solid #f8f8f8;">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">个人中心</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+        <navigator url="" class="weui-cell weui-cell_access border0" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">我的地址</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">联系客服</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+        <navigator url="" class="weui-cell weui-cell_access" style="border-bottom:20rpx solid #f8f8f8;" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+          <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">关于我们</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      </navigator>
+    </view>
+  </view>
+</view>

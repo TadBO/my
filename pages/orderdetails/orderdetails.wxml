@@ -1,0 +1,142 @@
+<!-- 报价页 -->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">服务类型:</view>
+        <view class="weui-cell__ft">家电维修</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">服务种类:</view>
+        <view class="weui-cell__ft">冰箱</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">预约地址:</view>
+      </view>
+      <view class="weui-cell border-0">
+        <view class="weui-cell__ft" style="text-align:left;">浙江省浙江省浙江省浙江省浙江省浙江省浙江省</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">预约时间:</view>
+        <view class="weui-cell__ft">2018-09-10 18:22:44</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">联系人:</view>
+        <view class="weui-cell__ft">张三</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">状态:</view>
+        <view class="weui-cell__ft">紧急</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">备注:</view>
+        <view class="weui-cell__ft">冰箱坏了,不制冷</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">您的报价:</view>
+        <view class="weui-cell__ft">
+          <text style="color:#1AAD19">100元</text>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="s-details-sf">
+      <view class="s-details-head">已报价师傅</view>
+      <view class="s-details-list">
+        <view class="item">
+          <view class="_left">
+            <image src='../../images/head.png' class="_himg"></image>
+            <view>张三</view>
+          </view>
+          <view class="_center">
+            <view>
+              <text>报价:</text>
+              <text>200</text>元</view>
+            <view>
+              <text>擅长:</text>
+              <text>家电 水电 搬</text>元</view>
+            <view>
+              <text>评分:</text>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+            </view>
+
+          </view>
+          <view class="_right">
+            <view class="_btn" style="color:#1AAD19">接受服务</view>
+            <view class="_btn" hidden style="color:#E64340">取消服务</view>
+          </view>
+        </view>
+
+        <view class="item">
+          <view class="_left">
+            <image src='../../images/head.png' class="_himg"></image>
+            <view>张三</view>
+          </view>
+          <view class="_center">
+            <view>
+              <text>报价:</text>
+              <text>200</text>元</view>
+            <view>
+              <text>擅长:</text>
+              <text>家电 水电 搬</text>元</view>
+            <view>
+              <text>评分:</text>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+              <image src="../../images/xx_1.png" class="s-xx-1"></image>
+            </view>
+
+          </view>
+          <view class="_right">
+            <view class="_btn" style="color:#E64340">取消服务</view>
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+
+    <!-- 服务中订单 -->
+    <view class="s-details-fw" style="">
+      <input style="" />
+      <view class="_msg">(价格为服务价格与材料费用)</view>
+    </view>
+    <!-- end -->
+
+    <button class="weui-btn" type="primary" style="width:80%;">确定服务完成</button>
+    <button class="weui-btn" type="primary" style="width:80%;">评价</button>
+    <view class="s-details-btns clearfix">
+      <button class="weui-btn s-btn-item" type="primary">重新发起</button>
+      <button class="weui-btn s-btn-item" type="warn">删除订单</button>
+    </view>
+
+    <!-- 订单已完成已评价显示 -->
+    <view class="weui-cells weui-cells_after-title" style="border-top:20rpx solid #eee;">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">用户评分:</view>
+        <view class="weui-cell__ft">
+          <image src="../../images/xx_1.png" class="s-xx-1"></image>
+          <image src="../../images/xx_1.png" class="s-xx-1"></image>
+          <image src="../../images/xx_1.png" class="s-xx-1"></image>
+          <image src="../../images/xx_1.png" class="s-xx-1"></image>
+          <image src="../../images/xx_1.png" class="s-xx-1"></image>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">用户评价:</view>
+      </view>
+      <view class="weui-cell border-0">
+        <view class="weui-cell__ft">师傅服务态度非常好师傅服务态度非常好</view>
+      </view>
+    </view>
+    <!-- end -->
+
+  </view>
+</view>

@@ -1,1 +1,20 @@
-/* pages/center/center.wxss */
+.c-head{
+  padding:20rpx;
+  border-bottom:20rpx solid #eee;
+}
+.c-head .c-head_img{
+  position:absolute;
+  left:40rpx;
+  width:100rpx;
+  height:100rpx;
+  border-radius: 50%;
+}
+.c-head .c-head_body{
+  margin-left:180rpx;
+}
+.c-head .c-head_body view:nth-child(1){
+  font-size: 28rpx;
+}
+.c-head .c-head_body view:nth-child(2){
+  font-size: 24rpx;
+}

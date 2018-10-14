@@ -1,0 +1,132 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+          <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+            <view class="weui-navbar__title">{{item}}</view>
+          </view>
+        </block>
+        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+              <navigator url="../orderdetails/orderdetails" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd m-img">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">维修空调</view>
+                  <view class="weui-media-box__desc">预约时间:2018/8/24 14:00</view>
+                  <view class="weui-media-box__desc">目前最低低价:
+                    <text class="_green">100</text>元</view>
+                </view>
+                <view class="weui-media-box__hd m-type-list">
+                  <view class="_item">已发单</view>
+                  <view class="_item" hidden>待服务</view>
+                  <view class="_item" hidden>服务中</view>
+                  <view class="_item" hidden>订单完成</view>
+                </view>
+              </navigator>
+              <navigator url="../orderdetails/orderdetails" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd m-img">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">维修空调</view>
+                  <view class="weui-media-box__desc">预约时间:2018/8/24 14:00</view>
+                  <view class="weui-media-box__desc">目前最低低价:
+                    <text class="_green">100</text>元</view>
+                </view>
+                <view class="weui-media-box__hd m-type-list">
+                  <view class="_item" hidden>已发单</view>
+                  <view class="_item" hidden>待服务</view>
+                  <view class="_item">服务中</view>
+                  <view class="_item" hidden>订单完成</view>
+                </view>
+              </navigator>
+              <navigator url="../orderdetails/orderdetails" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd m-img">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">维修空调</view>
+                  <view class="weui-media-box__desc">预约时间:2018/8/24 14:00</view>
+                  <view class="weui-media-box__desc">目前最低低价:
+                    <text class="_green">100</text>元</view>
+                </view>
+                <view class="weui-media-box__hd m-type-list">
+                  <view class="_item" hidden>已发单</view>
+                  <view class="_item">待服务</view>
+                  <view class="_item" hidden>服务中</view>
+                  <view class="_item" hidden>订单完成</view>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+          <view class="weui-panel weui-panel_access">
+            <view class="weui-panel__bd">
+            <!-- start -->
+              <navigator url="../orderdetails/orderdetails" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd m-img">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">维修空调接单</view>
+                  <view class="weui-media-box__desc">预约时间:2018/8/24 14:00</view>
+                  <view class="weui-media-box__desc">目前最低低价:
+                    <text class="_green">100</text>元</view>
+                </view>
+                <view class="weui-media-box__hd m-type-list">
+                  <view class="_item">已发单</view>
+                  <view class="_item" hidden>待服务</view>
+                  <view class="_item" hidden>服务中</view>
+                  <view class="_item" hidden>订单完成</view>
+                </view>
+              </navigator>
+              <navigator url="../orderdetails/orderdetails" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd m-img">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">维修空调</view>
+                  <view class="weui-media-box__desc">预约时间:2018/8/24 14:00</view>
+                  <view class="weui-media-box__desc">目前最低低价:
+                    <text class="_green">100</text>元</view>
+                </view>
+                <view class="weui-media-box__hd m-type-list">
+                  <view class="_item" hidden>已发单</view>
+                  <view class="_item" hidden>待服务</view>
+                  <view class="_item">服务中</view>
+                  <view class="_item" hidden>订单完成</view>
+                </view>
+              </navigator>
+              <navigator url="../orderdetails/orderdetails" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd m-img">
+                  <image class="weui-media-box__thumb" src="{{icon60}}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                  <view class="weui-media-box__title">维修空调</view>
+                  <view class="weui-media-box__desc">预约时间:2018/8/24 14:00</view>
+                  <view class="weui-media-box__desc">目前最低低价:
+                    <text class="_green">100</text>元</view>
+                </view>
+                <view class="weui-media-box__hd m-type-list">
+                  <view class="_item" hidden>已发单</view>
+                  <view class="_item">待服务</view>
+                  <view class="_item" hidden>服务中</view>
+                  <view class="_item" hidden>订单完成</view>
+                </view>
+              </navigator>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
