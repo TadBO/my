@@ -10,3 +10,23 @@ view {
   margin: 0;
   padding: 0;
 }
+.border-0{
+  padding-top:0;
+}
+.border-0::before{
+  border:0;
+}
+.border0::before{
+  border:0;
+}
+.border-after-0:after {
+  border:0;
+}
+.clearfix::after {
+    content: " ";
+    clear: both;
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    height: 0;
+}

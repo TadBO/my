@@ -1,12 +1,15 @@
 {
   "pages": [
-    "pages/sendorder/sendorder",
     "pages/index/index",
+    "pages/orderlist/orderlist",
+    "pages/orderdetails/orderdetails",
+    "pages/sendprice/sendprice",
+    "pages/sendorder/sendorder",
     "pages/center",
     "pages/center/center",
     "pages/send/send",
     "pages/order/order",
-    "pages/sendprice/sendprice"
+    "pages/buslist/buslist"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -18,19 +21,19 @@
     "selectedColor": "#8BC34A",
     "list": [
       {
-        "pagePath": "pages/sendorder/sendorder",
+        "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "images/index.png",
         "selectedIconPath": "images/index_1.png"
       },
       {
-        "pagePath": "pages/send/send",
+        "pagePath": "pages/sendorder/sendorder",
         "text": "发单",
         "iconPath": "images/send.png",
         "selectedIconPath": "images/send_1.png"
       },
       {
-        "pagePath": "pages/order/order",
+        "pagePath": "pages/orderlist/orderlist",
         "text": "订单",
         "iconPath": "images/order.png",
         "selectedIconPath": "images/order_1.png"
