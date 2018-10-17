@@ -6,54 +6,71 @@
             <i class="iconfont icon-xiajiantou"></i>
         </view>
         <view class="search">
-            <input type="text" value="{{searchValue}}" confirm-type="search" bindinput="searchList" placeholder="搜索关键字 如:'家电'" bindconfirm="searchData"/>
+            <input type="text" value="{{searchValue}}" confirm-type="search" bindinput="searchList"
+                   placeholder="搜索关键字 如:'家电'" bindconfirm="searchData"/>
             <i class="iconfont icon-sousuo"></i>
             <i wx:if="{{isShow}}" class="iconfont icon-guanbi" bindtap="clearSearch"></i>
         </view>
     </view>
+    <i-tabs color="#8BC34A" current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
+        <i-tab key="tab1" title="热搜"></i-tab>
+        <i-tab key="tab2" title="便民服务"></i-tab>
+        <i-tab key="tab3" title="家电维修"></i-tab>
+        <i-tab key="tab4" title="数码维修"></i-tab>
+        <i-tab key="tab5" title="家政服务"></i-tab>
+        <i-tab key="tab6" title="其他"></i-tab>
+    </i-tabs>
     <view>
-        <view class="page">
-            <view class="page__bd">
-                <view class="weui-tab">
-                    <view class="weui-navbar">
-                        <block wx:for="{{tabs}}" wx:key="*this">
-                            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                                <view class="weui-navbar__title">{{item}}</view>
-                            </view>
-                        </block>
-                        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-                    </view>
-                    <view class="weui-tab__panel">
-                        <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                            <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-                                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                                    <image class="weui-media-box__thumb" src="../../images/index.png" />
-                                </view>
-                                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                                    <view class="weui-media-box__title">维修空调</view>
-                                    <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
-                                    <view class="weui-media-box__desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
-                                </view>
-                            </navigator>
-                            <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-                                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                                    <image class="weui-media-box__thumb" src="../../images/index.png" />
-                                </view>
-                                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                                    <view class="weui-media-box__title">维修空调</view>
-                                    <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
-                                    <view class="weui-media-box__desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
-                                </view>
-                            </navigator>
-                        </view>
-                        <view class="weui-tab__content" hidden="{{activeIndex != 1}}">选项二的内容</view>
-                        <view class="weui-tab__content" hidden="{{activeIndex != 2}}">选项三的内容</view>
-                        <view class="weui-tab__content" hidden="{{activeIndex != 3}}">选项四的内容</view>
-                        <view class="weui-tab__content" hidden="{{activeIndex != 4}}">选项五的内容</view>
-                        <view class="weui-tab__content" hidden="{{activeIndex != 5}}">选项六的内容</view>
-                    </view>
-                </view>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="../../images/index.png" />
             </view>
-        </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">维修空调</view>
+                <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
+                <view class="weui-media-box__desc my_desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="../../images/index.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">维修空调</view>
+                <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
+                <view class="weui-media-box__desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="../../images/index.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">维修空调</view>
+                <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
+                <view class="weui-media-box__desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="../../images/index.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">维修空调</view>
+                <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
+                <view class="weui-media-box__desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
+            </view>
+        </navigator>
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="../../images/index.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">维修空调</view>
+                <view class="weui-media-box__desc">预约时间:2018/8/24 14:00 - 16:00</view>
+                <view class="weui-media-box__desc">地址 : 安徽省合肥市蜀山区黄山路和谐花园4#2504</view>
+            </view>
+        </navigator>
     </view>
+    <i-load-more tip="暂无数据" loading="{{ true }}" />
 </view>

@@ -24,6 +24,7 @@
 .top .icon-xiajiantou {
   font-size: 36rpx;
   color: #101010;
+  margin-left: 4px;
 }
 
 .top input::placeholder {
@@ -32,6 +33,7 @@
 
 .top .search {
   position: relative;
+  margin-left: 16px;
 }
 
 .search .iconfont {
@@ -59,4 +61,12 @@
 
 .weui-navbar__slider {
   width: 40px;
+}
+
+.my_desc {
+  font-size: 12px;
+}
+
+.weui-media-box {
+  padding: 10px;
 }

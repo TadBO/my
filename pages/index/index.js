@@ -8,27 +8,22 @@ Page({
     data: {
         isShow: false,
         searchValue: null,
-        tabs: ["热搜", "便民服务", "家电维修", "数码维修", "家政服务", "其他"],
-        activeIndex: 0,
-        sliderOffset: 0,
-        sliderLeft: 0
+        current: 'tab1',
+        current_scroll: 'tab1'
     },
     onLoad: function () {
-        var that = this;
-        wx.getSystemInfo({
-            success: function(res) {
-                that.setData({
-                    sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-                    sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
-                });
-            }
-        });
+
     },
     //关闭按钮的出现与否
     searchList(e) {
         this.setData({
             isShow: !!e.detail.value,
             searchValue: e.detail.value
+        });
+    },
+    handleChangeScroll({detail}) {
+        this.setData({
+            current_scroll: detail.key
         });
     },
     //点击关闭按钮，清空搜索框
@@ -43,10 +38,8 @@ Page({
         console.log(this.data.searchValue);
         //发送请求更新列表
     },
-    tabClick(e) {
-        this.setData({
-            sliderOffset: e.currentTarget.offsetLeft,
-            activeIndex: e.currentTarget.id
-        });
+    //上拉加载更多
+    onReachBottom() {
+        console.log(1);
     }
 })
