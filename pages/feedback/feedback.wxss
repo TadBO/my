@@ -1,0 +1,7 @@
+.fb-text {
+  border: 1px solid #eee;
+  border-radius: 10rpx;
+  width: 90%;
+  margin: auto;
+  padding: 10rpx;
+}

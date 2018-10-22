@@ -1,0 +1,5 @@
+<view>
+  <textarea maxlength="200" class="fb-text" placeholder='请输入您的宝贵意见'></textarea>
+</view>
+<i-button bind:click="handleClick" type="success">确定提交</i-button>
+

@@ -1,0 +1,6 @@
+
+<i-cell-group>
+    <i-cell title="隐私政策" is-link url="/pages/index/index"></i-cell>
+    <i-cell title="用户协议" is-link url="/pages/index/index"></i-cell>
+    <i-cell title="意见反馈" is-link url="/pages/feedback/feedback"></i-cell>
+</i-cell-group>

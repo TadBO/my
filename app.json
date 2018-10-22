@@ -9,7 +9,9 @@
     "pages/center/center",
     "pages/send/send",
     "pages/order/order",
-    "pages/buslist/buslist"
+    "pages/buslist/buslist",
+    "pages/aboutus/aboutus",
+    "pages/feedback/feedback"
   ],
   "window": {
     "backgroundTextStyle": "light",

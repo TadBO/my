@@ -43,7 +43,7 @@
         <view class="weui-cell__bd">联系客服</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>
-        <navigator url="" class="weui-cell weui-cell_access" style="border-bottom:20rpx solid #f8f8f8;" hover-class="weui-cell_active">
+        <navigator url="/pages/aboutus/aboutus" class="weui-cell weui-cell_access" style="border-bottom:20rpx solid #f8f8f8;" hover-class="weui-cell_active">
         <view class="weui-cell__hd">
           <image src="{{icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
         </view>
