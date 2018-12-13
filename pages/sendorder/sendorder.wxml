@@ -110,6 +110,6 @@
 
         
     </view>
-    <button class="weui-btn" type="primary" style="width:80%;margin-bottom:30rpx;">发布</button>
+    <button class="weui-btn" type="primary" style="width:80%;margin-bottom:30rpx;" bindtap="send">发布</button>
   </view>
 </view>
