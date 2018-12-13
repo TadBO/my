@@ -17,6 +17,7 @@ Page({
     //接下来写业务代码
     wx.request({
       url: app.globalData.url +'/order/wechatAuthUserInfo',
+      header: { 'token': app.globalData.token },
       data:{
         signature: e.detail.signature,
         rawData: e.detail.rawData,
