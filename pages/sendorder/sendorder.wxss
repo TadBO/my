@@ -5,3 +5,11 @@
 .s-weui-cell:before{
   border-top:0;
 }
+
+.weui-input {
+  font-size: 32rpx;
+}
+
+.weui-select {
+  font-size: 32rpx;
+}

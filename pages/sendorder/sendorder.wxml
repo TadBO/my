@@ -1,115 +1,138 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
   <view class="page__bd">
-    <view class="weui-cells weui-cells_after-title">
-      <view class="weui-cell weui-cell_select">
-        <view class="weui-cell__hd weui-cell__hd_in-select-after">
-          <view class="weui-label">服务类型
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-        <view class="weui-cell__bd">
-          <picker bindchange="bindCountryChange" value="{{countryIndex}}" range="{{countries}}">
-            <view class="weui-select weui-select_in-select-after" style="text-align:right;">{{countries[countryIndex]}}</view>
-          </picker>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">服务种类
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入服务种类类型，如家店" />
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">预约地址
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{cityName}}" />
-        </view>
-
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">预约时间
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请选择服务预约时间" />
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">联系人
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" placeholder="请输入联系人姓名" />
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input">
-        <view class="weui-cell__hd">
-          <view class="weui-label">联系人号码
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-        <view class="weui-cell__bd">
-          <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码" />
-        </view>
-      </view>
-      <view class="weui-cell">
-        <view class="weui-cell__hd">
-          <view class="weui-label">备注
-            <text style="color:red;">*</text>
-          </view>
-        </view>
-      </view>
-      <view class="weui-cell weui-cell_input s-weui-cell">
-        <view class="weui-cell__bd">
-          <textarea class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" />
-
-        </view>
-      </view>
-
-      <!--  -->
-      <view class="weui-cell">
-        <view class="weui-cell__bd">
-          <view class="weui-uploader">
-            <view class="weui-uploader__hd">
-              <view class="weui-uploader__title">图片上传</view>
-              <view class="weui-uploader__info">{{files.length}}/2</view>
+    <form bindsubmit="send">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">服务类型
+              <text style="color:red;">*</text>
             </view>
-            <view class="weui-uploader__bd">
-              <view class="weui-uploader__files" id="uploaderFiles">
-                <block wx:for="{{files}}" wx:key="*this">
-                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
-                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
-                  </view>
-                </block>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindCountryChange" value="{{index}}" range="{{countries}}" range-key="{{'categoryValue'}}">
+              <view class="weui-select weui-select_in-select-after" style="text-align:right;">
+                {{categoryName}}
+                <input type="text" hidden="{{true}}" name="categoryKey" value="{{categoryKey}}"/>
               </view>
-              <view class="weui-uploader__input-box">
-                <view class="weui-uploader__input" bindtap="chooseImage"></view>
-              </view>
-              
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">服务种类
+              <text style="color:red;">*</text>
             </view>
-            <view style="text-align:center;color:#999;font-size:24rpx;">(点击查看大图)</view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="serviceType" class="weui-input" placeholder="请输入服务种类类型，如家店" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">预约地址
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="city" class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{cityName}}" />
+            <input type="text" name="addressDetail" hidden="true"/>
+            <input type="text" name="longitude" hidden="true"/>
+            <input type="text" name="latitude" hidden="true"/>
           </view>
 
+        </view>
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__hd weui-cell__hd_in-select-after">
+            <view class="weui-label">预约时间
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <picker bindchange="bindDateChange" mode="date">
+              <view class="weui-select weui-select_in-select-after" style="text-align:right;">
+                {{time}}
+                <input type="text" hidden="{{true}}" name="arrangedTime" value="{{time}}"/>
+              </view>
+            </picker>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">预约时间
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input class="weui-input" placeholder="请选择服务预约时间" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系人
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="linkmanName" class="weui-input" placeholder="请输入联系人姓名" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">联系人号码
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="linkmanPhone" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码" />
+          </view>
+        </view>
+        <view class="weui-cell">
+          <view class="weui-cell__hd">
+            <view class="weui-label">备注
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input s-weui-cell">
+          <view class="weui-cell__bd">
+            <textarea name="orderRemark" class="weui-textarea" placeholder="请输入文本" style="height: 3.3em" />
 
+          </view>
         </view>
 
-      </view>
-      <!--  -->
+        <!--  -->
+        <view class="weui-cell">
+          <view class="weui-cell__bd">
+            <view class="weui-uploader">
+              <view class="weui-uploader__hd">
+                <view class="weui-uploader__title">图片上传</view>
+                <view class="weui-uploader__info">{{files.length}}/2</view>
+              </view>
+              <view class="weui-uploader__bd">
+                <view class="weui-uploader__files" id="uploaderFiles">
+                  <block wx:for="{{files}}" wx:key="*this">
+                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                      <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                    </view>
+                  </block>
+                </view>
+                <view class="weui-uploader__input-box">
+                  <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                </view>
 
-        
-    </view>
-    <button class="weui-btn" type="primary" style="width:80%;margin-bottom:30rpx;" bindtap="send">发布</button>
+              </view>
+              <view style="text-align:center;color:#999;font-size:24rpx;">(点击查看大图)</view>
+            </view>
+
+
+          </view>
+
+        </view>
+        <!--  -->
+
+
+      </view>
+      <button class="weui-btn" type="primary" form-type="submit" style="width:80%;margin-bottom:30rpx;">发布</button>
+    </form>
   </view>
 </view>

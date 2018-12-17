@@ -13,12 +13,13 @@
         </view>
     </view>
     <i-tabs color="#8BC34A" current="{{ current_scroll }}" scroll bindchange="handleChangeScroll">
-        <i-tab key="tab1" title="热搜"></i-tab>
-        <i-tab key="tab2" title="便民服务"></i-tab>
-        <i-tab key="tab3" title="家电维修"></i-tab>
-        <i-tab key="tab4" title="数码维修"></i-tab>
-        <i-tab key="tab5" title="家政服务"></i-tab>
-        <i-tab key="tab6" title="其他"></i-tab>
+        <i-tab key="tab_1" title="热搜"></i-tab>
+        <i-tab key="tab_{{index + 2}}" title="{{item.categoryValue}}" wx:for="{{categoryArr}}" wx:for-item="item"></i-tab>
+        <!--<i-tab key="tab2" title="便民服务"></i-tab>-->
+        <!--<i-tab key="tab3" title="家电维修"></i-tab>-->
+        <!--<i-tab key="tab4" title="数码维修"></i-tab>-->
+        <!--<i-tab key="tab5" title="家政服务"></i-tab>-->
+        <!--<i-tab key="tab6" title="其他"></i-tab>-->
     </i-tabs>
     <view>
         <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
