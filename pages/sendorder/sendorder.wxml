@@ -34,7 +34,7 @@
             </view>
           </view>
           <view class="weui-cell__bd">
-            <input name="city" class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{cityName}}" />
+            <input name="city" class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}" />
             <input type="text" name="addressDetail" hidden="true"/>
             <input type="text" name="longitude" hidden="true"/>
             <input type="text" name="latitude" hidden="true"/>

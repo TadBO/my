@@ -13,7 +13,14 @@ Page({
         files: [],
         categoryKey: '',
         categoryName: '',
-        time: '请选择服务预约时间'
+        time: '请选择服务预约时间',
+        userName: "",
+        provinceName: "",
+        cityName: "",
+        countyName: "",
+        detailInfo: "",
+        telNumber: "",
+        user_msg: 1
     },
     send: function (e) {
         console.log(e.detail.value);
@@ -38,18 +45,22 @@ Page({
 
     },
     chooseAddress: function (e) {
-        var that = this;
-        console.log("获取用户地址");
-        wx.chooseAddress({
-            success: function (res) {
-                console.log(res);
-                that.address = res;
-                console.log(that.cityName);
-                that.setData({
-                    cityName: res.cityName
-                })
-            }
-        })
+      var that = this;
+      console.log("获取用户地址");
+      wx.chooseAddress({
+        success: function (res) {
+          that.setData({
+            userName: res.userName,
+            provinceName: res.provinceName,
+            cityName: res.cityName,
+            countyName: res.countyName,
+            detailInfo: res.detailInfo,
+            telNumber: res.telNumber,
+            user_msg: 1
+          })
+
+        }
+      })
     },
 
     chooseImage: function (e) {
