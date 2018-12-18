@@ -120,14 +120,17 @@ Page({
         if (!this.data.isMore) {
             return;  //没有更多数据暂停下拉加载
         }
-        let pageIndex = this.data.pageNumber++;
+        let pageIndex = this.data.pageNumber + 1;
         this.setData({
             showFlag: true,
             showTip: '拼命加载中',
             loading: true,
             pageNumber: pageIndex
         });
-        this.getDataList();
+       let timer = setTimeout(() => {
+           this.getDataList();
+           clearTimeout(timer);
+       }, 1000);
     },
     // 获取数据
     getDataList() {
@@ -149,7 +152,7 @@ Page({
             data:serach,
             success(res) {
                 if (res.data.code === 2000001) {
-                    if (res.data.data.totalCount <= _this.data.pageSize) {
+                    if (res.data.data.totalCount <= _this.data.pageSize * _this.data.pageNumber) {
                         let pageList = _this.data.dataList.concat(res.data.data.pageList);
                         _this.setData({
                             showFlag: true,
