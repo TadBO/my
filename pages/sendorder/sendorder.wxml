@@ -24,7 +24,17 @@
             </view>
           </view>
           <view class="weui-cell__bd">
-            <input name="serviceType" class="weui-input" placeholder="请输入服务种类类型，如家店" />
+            <input name="serviceType" class="weui-input" placeholder="请输入服务种类类型，如家电" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">服务内容
+              <text style="color:red;">*</text>
+            </view>
+          </view>
+          <view class="weui-cell__bd">
+            <input name="orderContent" class="weui-input" placeholder="请输入服务内容，如修理冰箱等" />
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -35,9 +45,9 @@
           </view>
           <view class="weui-cell__bd">
             <input name="city" class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}" />
-            <input type="text" name="addressDetail" hidden="true"/>
-            <input type="text" name="longitude" hidden="true"/>
-            <input type="text" name="latitude" hidden="true"/>
+            <input type="text" value="{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}" name="addressDetail" hidden="true"/>
+            <input type="text" value="{{lon}}" name="longitude" hidden="true"/>
+            <input type="text" value="{{lat}}" name="latitude" hidden="true"/>
           </view>
 
         </view>
@@ -58,22 +68,12 @@
         </view>
         <view class="weui-cell weui-cell_input">
           <view class="weui-cell__hd">
-            <view class="weui-label">预约时间
-              <text style="color:red;">*</text>
-            </view>
-          </view>
-          <view class="weui-cell__bd">
-            <input class="weui-input" placeholder="请选择服务预约时间" />
-          </view>
-        </view>
-        <view class="weui-cell weui-cell_input">
-          <view class="weui-cell__hd">
             <view class="weui-label">联系人
               <text style="color:red;">*</text>
             </view>
           </view>
           <view class="weui-cell__bd">
-            <input name="linkmanName" class="weui-input" placeholder="请输入联系人姓名" />
+            <input name="linkmanName" value="{{userName}}" class="weui-input" placeholder="请输入联系人姓名" />
           </view>
         </view>
         <view class="weui-cell weui-cell_input">
@@ -83,7 +83,7 @@
             </view>
           </view>
           <view class="weui-cell__bd">
-            <input name="linkmanPhone" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码" />
+            <input name="linkmanPhone" value="{{telNumber}}" maxlength="11" class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入号码" />
           </view>
         </view>
         <view class="weui-cell">
@@ -106,7 +106,7 @@
             <view class="weui-uploader">
               <view class="weui-uploader__hd">
                 <view class="weui-uploader__title">图片上传</view>
-                <view class="weui-uploader__info">{{files.length}}/2</view>
+                <view class="weui-uploader__info">{{files.length}}/3</view>
               </view>
               <view class="weui-uploader__bd">
                 <view class="weui-uploader__files" id="uploaderFiles">

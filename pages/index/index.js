@@ -7,7 +7,7 @@ var sliderWidth = 50; // 需要设置slider的宽度，用于计算中间位置
 Page({
     data: {
         isShow: false,
-        searchValue: null,
+        searchValue: '',
         current: 'tab_1',
         current_scroll: 'tab_1',
         categoryArr: [],
@@ -16,10 +16,19 @@ Page({
         longitude: '',
         latitude: '',
         pageSize: 10,
-        pageNumber: 1
+        pageNumber: 1,
+        showFlag: false,
+        showTip: '拼命加载中',
+        dataList: [],
+        loading: true,
+        isMore: true,
+        isFirst: true
     },
     onLoad: function () {
         let that = this;
+        that.setData({
+            isFirst: false
+        });
         wx.login({
             success: res => {
                 // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -58,19 +67,27 @@ Page({
             searchValue: e.detail.value
         });
     },
+    // 切换菜单时更新数据
     handleChangeScroll({detail}) {
         let _this = this;
         if (detail.key.split('_')[1] == 1) {
             _this.setData({
-                categoryKey: ''
+                categoryKey: '',
+                keyWord: '',
+                pageNumber: 1,
+                dataList: []
             });
         } else {
             let category = this.data.categoryArr[detail.key.split('_')[1] -2].categoryKey;
             _this.setData({
-                categoryKey: category
+                categoryKey: category,
+                keyWord: '',
+                pageNumber: 1,
+                dataList: []
             });
         }
         this.setData({
+            pageNumber: 1,
             current_scroll: detail.key
         });
         _this.getDataList();
@@ -85,11 +102,32 @@ Page({
     //点击搜索进行搜索时
     searchData() {
         console.log(this.data.searchValue);
+        let _this = this,
+            key = this.data.searchValue;
+        // 重置搜索条件
+        this.setData({
+            keyWord: key,
+            categoryKey: '',
+            pageSize: 10,
+            pageNumber: 1,
+            dataList: []
+        });
         //发送请求更新列表
+        this.getDataList();
     },
     //上拉加载更多
     onReachBottom() {
-        console.log(1);
+        if (!this.data.isMore) {
+            return;  //没有更多数据暂停下拉加载
+        }
+        let pageIndex = this.data.pageNumber++;
+        this.setData({
+            showFlag: true,
+            showTip: '拼命加载中',
+            loading: true,
+            pageNumber: pageIndex
+        });
+        this.getDataList();
     },
     // 获取数据
     getDataList() {
@@ -102,12 +140,41 @@ Page({
             pageSize: _this.data.pageSize,
             pageNumber: _this.data.pageNumber,
         }
+        wx.showLoading({
+            title: '加载中'
+        })
         wx.request({
             url: app.globalData.url + '/order/orderList',
             header: {'token': app.globalData.token},
             data:serach,
             success(res) {
-                console.log(res);
+                if (res.data.code === 2000001) {
+                    if (res.data.data.totalCount <= _this.data.pageSize) {
+                        let pageList = _this.data.dataList.concat(res.data.data.pageList);
+                        _this.setData({
+                            showFlag: true,
+                            showTip: '暂无数据',
+                            loading: false,
+                            isMore: false,
+                            dataList: pageList
+                        });
+                    }  else {
+                        let pageList = _this.data.dataList.concat(res.data.data.pageList);
+                        _this.setData({
+                            showFlag: false,
+                            showTip: '暂无数据',
+                            loading: false,
+                            isMore: true,
+                            dataList: pageList
+                        });
+                    }
+                }
+            },
+            complete() {
+                let timer = setTimeout(() => {
+                    wx.hideLoading();
+                    clearTimeout(timer);
+                }, 1000);
             }
         })
     },
@@ -123,5 +190,18 @@ Page({
                 });
             }
         })
+    },
+    onShow() {
+        //每次打开的时候重新调用数据
+        this.setData({
+            keyWord: '',
+            categoryKey: '',
+            pageSize: 10,
+            pageNumber: 1,
+            dataList: []
+        });
+        if (!this.data.isFirst) {
+            this.getDataList();
+        }
     }
 })

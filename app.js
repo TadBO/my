@@ -20,6 +20,7 @@ App({
                     success: res => {
                         //缓存token全局使用
                         that.globalData.token = res.data.data.token;
+                        let flag = res.data.data.auth;
                         // 获取用户信息
                         wx.getSetting({
                             success: res => {
@@ -30,6 +31,9 @@ App({
                                         success: res => {
                                             // 可以将 res 发送给后台解码出 unionId
                                             that.globalData.userInfo = res.userInfo
+                                            if (flag == 1) {
+                                                return;
+                                            }
                                             wx.request({
                                                 url: that.globalData.url + '/order/wechatAuthUserInfo',
                                                 header: {'token': this.globalData.token},

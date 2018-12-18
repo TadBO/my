@@ -1,0 +1,47 @@
+<!--pages/index/detail/detail.wxml-->
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells weui-cells_after-title" style="margin-bottom: 40rpx">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">服务类型:</view>
+                <view class="weui-cell__ft">{{orderDeatail.serviceType}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">服务种类:</view>
+                <view class="weui-cell__ft">{{orderDeatail.orderContent}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">预约地址:</view>
+                <view class="weui-cell__ft">{{orderDeatail.address}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">预约时间:</view>
+                <view class="weui-cell__ft">{{orderDeatail.arrangedTime}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">联系人:</view>
+                <view class="weui-cell__ft">{{orderDeatail.linkmanName}}</view>
+            </view>
+            <view class="weui-cell">
+                <view class="weui-cell__bd">联系电话:</view>
+                <view class="weui-cell__ft">{{orderDeatail.linkmanPhone}}</view>
+            </view>
+            <!--<view class="weui-cell">-->
+                <!--<view class="weui-cell__bd">状态:</view>-->
+                <!--<view class="weui-cell__ft">{{orderDeatail.status}}</view>-->
+            <!--</view>-->
+            <view class="weui-cell">
+                <view class="weui-cell__bd">备注:</view>
+            </view>
+            <view class="weui-cell border-0">
+                <view class="weui-cell__ft" style="text-align:left;">{{orderDeatail.orderRemark}}</view>
+            </view>
+        </view>
+        <!-- 服务中订单 -->
+        <view class="s-details-fw">
+            <input bindinput="priceChange" value="{{price}}" type="number" style="height: 92rpx" placeholder="请输入您的报价" />
+            <button class="weui-btn" type="primary" style="width:80%;" bindtap="postOrder">报价</button>
+        </view>
+        <!-- end -->
+    </view>
+</view>

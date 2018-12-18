@@ -11,7 +11,8 @@
     "pages/order/order",
     "pages/buslist/buslist",
     "pages/aboutus/aboutus",
-    "pages/feedback/feedback"
+    "pages/feedback/feedback",
+    "pages/index/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

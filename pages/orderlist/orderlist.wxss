@@ -9,7 +9,7 @@
   color:red;
 }
 .weui-media-box__desc{
-  font-size: 28rpx;
+  font-size: 26rpx;
 }
 .weui-media-box__desc ._green{
   color:#1AAD19;
