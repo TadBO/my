@@ -1,0 +1,47 @@
+<!-- 报价页 -->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__bd">服务类型:</view>
+        <view class="weui-cell__ft">{{serviceType}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">服务种类:</view>
+        <view class="weui-cell__ft">{{orderContent}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">预约地址:</view>
+      </view>
+      <view class="weui-cell border-0">
+        <view class="weui-cell__ft" style="text-align:left;">{{address}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">预约时间:</view>
+        <view class="weui-cell__ft">{{arrangedTime}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">联系人:</view>
+        <view class="weui-cell__ft">{{linkmanName}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">状态:</view>
+        <view class="weui-cell__ft">{{status}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">备注:</view>
+        <view class="weui-cell__ft">{{orderRemark}}</view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__bd">您的报价:</view>
+        <view class="weui-cell__ft">
+          <text style="color:#1AAD19">{{price}}元</text>
+        </view>
+      </view>
+    </view>
+
+
+
+
+  </view>
+</view>

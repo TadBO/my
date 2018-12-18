@@ -1,0 +1,86 @@
+/* pages/orderdetails/orderdetails.wxss */
+
+.s-details-sf {
+  border-top: 20rpx solid #eee;
+  padding-bottom: 20rpx;
+}
+
+.s-details-head {
+  padding: 20rpx;
+  text-align: center;
+  font-size: 34rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.s-details-list .item {
+  position: relative;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 0;
+  box-sizing: content-box;
+}
+
+.s-details-list .item ._left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 180rpx;
+  height: 120rpx;
+  margin-top: -60rpx;
+  text-align: center;
+}
+
+.s-details-list .item ._left ._himg {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.s-details-list .item ._center {
+  margin: 0 180rpx;
+  vertical-align: middle;
+  font-size: 32rpx;
+}
+
+.s-details-list .item ._center text {
+  vertical-align: middle;
+}
+
+.s-xx-1 {
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+
+.s-details-list .item ._right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 180rpx;
+  height: 100%;
+  text-align: center;
+}
+
+.s-details-list .item ._right ._btn {
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+}
+
+.s-details-btns {
+}
+
+.s-details-btns .s-btn-item {
+  float: left;
+  width: 40%;
+  margin: 0 5%;
+}
+
+.s-details-fw input {
+  border: 1px solid #eee;
+  border-radius: 10rpx;
+  width: 80%;
+  margin: auto;
+}
+
+.s-details-fw ._msg {
+  text-align: center;
+}

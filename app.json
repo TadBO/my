@@ -12,7 +12,8 @@
     "pages/buslist/buslist",
     "pages/aboutus/aboutus",
     "pages/feedback/feedback",
-    "pages/index/detail/detail"
+    "pages/index/detail/detail",
+    "pages/acceptorder/acceptorder"
   ],
   "window": {
     "backgroundTextStyle": "light",
