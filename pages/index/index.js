@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
 
 var sliderWidth = 50; // 需要设置slider的宽度，用于计算中间位置
 
@@ -22,10 +23,15 @@ Page({
         dataList: [],
         loading: true,
         isMore: true,
-        isFirst: true
+        isFirst: true,
+        qqmapsdk: '',
+        address: '您的位置'
     },
     onLoad: function () {
         let that = this;
+        this.data.qqmapsdk = new QQMapWX({
+            key: 'K6HBZ-LXQCQ-NWK5Q-GWLI7-XXMFO-ABBP7'
+        });
         that.setData({
             isFirst: false
         });
@@ -50,6 +56,21 @@ Page({
                                     latitude: latitude,
                                     longitude: longitude,
                                 });
+                                that.data.qqmapsdk.reverseGeocoder({
+                                    location: {
+                                        latitude: latitude,
+                                        longitude: longitude
+                                    },
+                                    success(res) {
+                                        console.log(res);
+                                        let address = res.result.address.split('市').length > 1 ? res.result.address.split('市')[1] : res.result.address.split('市')[0];
+                                        if (res.status == 0) {
+                                            that.setData({
+                                                address: address.substring(0, 6) + '...'
+                                            })
+                                        }
+                                    }
+                                })
                                 that.getDataList();
                             }
                         })
@@ -86,8 +107,8 @@ Page({
                 dataList: []
             });
         }
+        console.log(detail.key);
         this.setData({
-            pageNumber: 1,
             current_scroll: detail.key
         });
         _this.getDataList();
@@ -101,7 +122,6 @@ Page({
     },
     //点击搜索进行搜索时
     searchData() {
-        console.log(this.data.searchValue);
         let _this = this,
             key = this.data.searchValue;
         // 重置搜索条件
@@ -121,6 +141,7 @@ Page({
             return;  //没有更多数据暂停下拉加载
         }
         let pageIndex = this.data.pageNumber + 1;
+        console.log(pageIndex);
         this.setData({
             showFlag: true,
             showTip: '拼命加载中',
@@ -133,7 +154,7 @@ Page({
        }, 1000);
     },
     // 获取数据
-    getDataList() {
+    getDataList(type) {
         let _this = this;
         let serach = {
             categoryKey: _this.data.categoryKey,
@@ -178,6 +199,9 @@ Page({
                     wx.hideLoading();
                     clearTimeout(timer);
                 }, 1000);
+                if (type == 'down') {
+                    wx.stopPullDownRefresh();
+                }
             }
         })
     },
@@ -196,15 +220,41 @@ Page({
     },
     onShow() {
         //每次打开的时候重新调用数据
+        // this.setData({
+        //     keyWord: '',
+        //     categoryKey: '',
+        //     pageSize: 10,
+        //     pageNumber: 1,
+        //     dataList: []
+        // });
+        // if (!this.data.isFirst) {
+        //     this.getDataList();
+        // }
+    },
+    chooseLacation() {
+        let _this = this;
+        wx.chooseLocation({
+            success(res) {
+                console.log(res);
+                let address = res.name.length > 6 ? res.name.substring(0, 6) + '...' : res.name;
+                _this.setData({
+                    address: address,
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    pageNumer: 1
+                });
+                _this.getDataList();
+            }
+        })
+    },
+    // 下拉刷新
+    onPullDownRefresh() {
         this.setData({
-            keyWord: '',
             categoryKey: '',
-            pageSize: 10,
+            keyWord: '',
             pageNumber: 1,
             dataList: []
         });
-        if (!this.data.isFirst) {
-            this.getDataList();
-        }
+        this.getDataList('down');
     }
 })

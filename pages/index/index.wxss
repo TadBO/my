@@ -1,6 +1,6 @@
 /**index.wxss**/
 .top {
-  padding-left: 12rpx;
+  padding: 20rpx;
   display: flex;
   align-items: center;
 }
@@ -11,7 +11,7 @@
 }
 
 .top input {
-  width: 400rpx;
+  width: 360rpx;
   height: 56rpx;
   line-height: 60rpx;
   border: 1px solid #bbb;
@@ -33,7 +33,6 @@
 
 .top .search {
   position: relative;
-  margin-left: 16px;
 }
 
 .search .iconfont {
@@ -69,4 +68,16 @@
 
 .weui-media-box {
   padding: 10px;
+}
+
+.loading {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loading image {
+  width: 120px;
+  height: 80px;
 }

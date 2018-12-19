@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "i-load-more": "../../components/load-more/index"
-  }
+  },
+  "navigationBarTitleText": "订单中心"
 }

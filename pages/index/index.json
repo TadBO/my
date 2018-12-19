@@ -4,5 +4,8 @@
     "i-tab": "../../components/tab/index",
     "i-card": "../../components/card/index",
     "i-load-more": "../../components/load-more/index"
-  }
+  },
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "首页"
 }

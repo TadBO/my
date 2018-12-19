@@ -1,5 +1,5 @@
 <view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
-  <view class="page__bd">
+  <view class="page__bd" style="padding-bottom: 40rpx;">
     <form bindsubmit="send">
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell weui-cell_select">
@@ -44,8 +44,8 @@
             </view>
           </view>
           <view class="weui-cell__bd">
-            <input name="city" class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}" />
-            <input type="text" value="{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}" name="addressDetail" hidden="true"/>
+            <input name="addressDetail" class="weui-input" placeholder="选择服务地址" bindtap="chooseAddress" value="{{provinceName}}{{cityName}}{{countyName}}{{detailInfo}}" />
+            <input type="text" value="{{cityName}}" name="city" hidden="true"/>
             <input type="text" value="{{lon}}" name="longitude" hidden="true"/>
             <input type="text" value="{{lat}}" name="latitude" hidden="true"/>
           </view>
@@ -111,7 +111,7 @@
               <view class="weui-uploader__bd">
                 <view class="weui-uploader__files" id="uploaderFiles">
                   <block wx:for="{{files}}" wx:key="*this">
-                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}" bindlongpress="deleteImage" data-index="{{index}}">
                       <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
                     </view>
                   </block>
@@ -132,7 +132,7 @@
 
 
       </view>
-      <button class="weui-btn" type="primary" form-type="submit" style="width:80%;margin-bottom:30rpx;">发布</button>
+      <button class="weui-btn" type="primary" form-type="submit" style="width:80%;">发布</button>
     </form>
   </view>
 </view>

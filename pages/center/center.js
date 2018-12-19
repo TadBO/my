@@ -6,9 +6,24 @@ Page({
      * 页面的初始数据
      */
     data: {
-        headImg: "../../images/center_1.png",
         icon: "../../images/send_1.png",
-        showFlag: false
+        showFlag: false,
+        userName: '',
+        provinceName: '',
+        cityName: '',
+        countyName: '',
+        detailInfo: '',
+        telNumber: '',
+        user_msg: 1,
+        visible1: false,
+        actions1: [
+            {
+                name: '客服热线:10106066',
+            },
+            {
+                name: '在线客服'
+            }
+        ],
     },
     bindGetUserInfo: function (e) {
         var that = this;
@@ -98,5 +113,46 @@ Page({
      */
     onShareAppMessage: function () {
 
-    }
+    },
+    //地址维护
+    chooseAddress() {
+        let _this = this;
+        wx.chooseAddress({
+            success: function (res) {
+                console.log(res);
+                _this.setData({
+                    userName: res.userName,
+                    provinceName: res.provinceName,
+                    cityName: res.cityName,
+                    countyName: res.countyName,
+                    detailInfo: res.detailInfo,
+                    telNumber: res.telNumber,
+                    user_msg: 1
+                });
+            }
+        });
+    },
+    handleOpen1 () {
+        this.setData({
+            visible1: true
+        });
+    },
+    handleCancel1 () {
+        this.setData({
+            visible1: false
+        });
+    },
+    handleClickItem1 ({ detail }) {
+        const index = detail.index + 1;
+        console.log(index);
+        if (index == 1) {  //客服电话
+            wx.makePhoneCall({
+                phoneNumber: '10106066' //只有一个写死
+            });
+        } else {  //在线客服
+
+        }
+        // 关闭弹窗
+        this.handleCancel1();
+    },
 })

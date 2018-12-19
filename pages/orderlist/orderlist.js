@@ -1,6 +1,7 @@
 // pages/orderlist/orderlist.js
 var sliderWidth = 96; // 需要设置slider的宽度，用于计算中间位置
 var app = getApp();
+import checkLogin from '../../utils/check-login';
 Page({
 
     /**
@@ -50,7 +51,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        checkLogin.checkLogin();
     },
 
     /**

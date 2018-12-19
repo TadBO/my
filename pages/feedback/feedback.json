@@ -2,5 +2,6 @@
   "usingComponents": {
     "i-input": "../../components/input/index",
     "i-button": "../../components/button/index"
-  }
+  },
+  "navigationBarTitleText": "意见反馈"
 }

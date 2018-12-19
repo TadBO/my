@@ -1,6 +1,7 @@
 // pages/sendorder/sendorder.js
 var app = getApp();
 var QQMapWX = require('../../utils/qqmap-wx-jssdk.min.js');
+import checkLogin from '../../utils/check-login';
 Page({
 
     /**
@@ -10,11 +11,10 @@ Page({
         countries: [],
         countryIndex: 0,
         address: {},
-        cityName: "3241234",
         files: [],
         categoryKey: '',
         categoryName: '',
-        time: '2018-12-18 12:38:40',
+        time: '',
         userName: "",
         provinceName: "",
         cityName: "",
@@ -146,7 +146,6 @@ Page({
                     user_msg: 1
                 })
                 let address = res.provinceName + res.cityName + res.countyName + res.detailInfo;
-                console.log(address);
                 that.data.qqmapsdk.geocoder({
                     address: address,   //用户输入的地址（注：地址中请包含城市名称，否则会影响解析效果），如：'北京市海淀区彩和坊路海淀西大街74号'
                     complete: res => {
@@ -165,6 +164,13 @@ Page({
 
     chooseImage: function (e) {
         var that = this;
+        if (this.data.files.length > 2) {
+            wx.showToast({
+              title: '最多上传3张图片',
+                icon: 'none'
+            });
+            return false;
+        }
         wx.chooseImage({
             count: 3,
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -232,7 +238,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        checkLogin.checkLogin();
     }
     ,
 
@@ -336,5 +342,24 @@ Page({
 
             }
         });
+    },
+    deleteImage: function (e) {  //长按删除图片
+        var that = this;
+        var images = that.data.files;
+        var index = e.currentTarget.dataset.index;//获取当前长按图片下标
+        wx.showModal({
+            title: '提示',
+            content: '确定要删除此图片吗？',
+            success: function (res) {
+                if (res.confirm) {
+                    images.splice(index, 1);
+                } else if (res.cancel) {
+                    return false;
+                }
+                that.setData({
+                    files: images
+                });
+            }
+        })
     }
 })
