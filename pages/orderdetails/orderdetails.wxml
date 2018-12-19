@@ -32,27 +32,21 @@
         <view class="weui-cell__bd">备注:</view>
         <view class="weui-cell__ft">{{orderRemark}}</view>
       </view>
-      <view class="weui-cell">
-        <view class="weui-cell__bd">您的报价:</view>
-        <view class="weui-cell__ft">
-          <text style="color:#1AAD19">100元</text>
-        </view>
-      </view>
     </view>
 
 
     <view class="s-details-sf">
       <view class="s-details-head">已报价师傅</view>
-      <view class="s-details-list">
+      <view class="s-details-list" wx:for="{{prices}}">
         <view class="item">
           <view class="_left">
             <image src='../../images/head.png' class="_himg"></image>
-            <view>张三</view>
+            <view>{{item.userName}}</view>
           </view>
           <view class="_center">
             <view>
               <text>报价:</text>
-              <text>200</text>元</view>
+              <text>{{item.price}}</text>元</view>
             <view>
               <text>擅长:</text>
               <text>家电 水电 搬</text>元</view>
@@ -67,12 +61,12 @@
 
           </view>
           <view class="_right">
-            <view class="_btn" style="color:#1AAD19">接受服务</view>
-            <view class="_btn" hidden style="color:#E64340">取消服务</view>
+            <view class="_btn" style="color:#1AAD19" data-userid="{{item.userId}}" bindtap='yes'>接受服务</view>
+            <view class="_btn" hidden style="color:#E64340" data-userid="{{item.userId}}" bindtap='no'>取消服务</view>
           </view>
         </view>
 
-        <view class="item">
+        <!-- <view class="item">
           <view class="_left">
             <image src='../../images/head.png' class="_himg"></image>
             <view>张三</view>
@@ -97,28 +91,21 @@
           <view class="_right">
             <view class="_btn" style="color:#E64340">取消服务</view>
           </view>
-        </view>
+        </view> -->
 
       </view>
 
     </view>
 
-    <!-- 服务中订单 -->
-    <view class="s-details-fw" style="">
-      <input style="" />
-      <view class="_msg">(价格为服务价格与材料费用)</view>
-    </view>
-    <!-- end -->
-
-    <button class="weui-btn" type="primary" style="width:80%;">确定服务完成</button>
-    <button class="weui-btn" type="primary" style="width:80%;">评价</button>
-    <view class="s-details-btns clearfix">
+    <button wx:if="{{status == 3}}" class="weui-btn" type="primary" style="width:80%;">确定服务完成</button>
+    <button wx:if="{{status == 4}}" class="weui-btn" type="primary" style="width:80%;">评价</button>
+    <view wx:if="{{status == 5}}" class="s-details-btns clearfix">
       <button class="weui-btn s-btn-item" type="primary">重新发起</button>
       <button class="weui-btn s-btn-item" type="warn">删除订单</button>
     </view>
 
     <!-- 订单已完成已评价显示 -->
-    <view class="weui-cells weui-cells_after-title" style="border-top:20rpx solid #eee;">
+    <view wx:if="{{status == 2}}" class="weui-cells weui-cells_after-title" style="border-top:20rpx solid #eee;">
       <view class="weui-cell">
         <view class="weui-cell__bd">用户评分:</view>
         <view class="weui-cell__ft">

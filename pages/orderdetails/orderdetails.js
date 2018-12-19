@@ -21,6 +21,26 @@ Page({
     longitude: 113.324,
     orderContent: "修理家电",
     orderRemark: "测试发单家电",
+    prices: [
+      {
+        "price": 18.6,
+        "createTime": "2018-10-18 11:27:19",
+        "compositeScore": 3.6,
+        "userId": "40280981666c1ed101666c5740c60002",
+        "userName": "薛定谔的咸鱼",
+        "nickName": "薛定谔的咸鱼",
+        "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL42P0KLPVNYfj0aYeCv7yaicSYWBclSb3cHFIahRAezWHosSgECibDPsBDSQOZxE5UPzd9yhQF8g5w/132"
+      },
+      {
+        "price": 186,
+        "createTime": "2018-10-18 11:27:19",
+        "compositeScore": 3.6,
+        "userId": "40280981666c1ed101666c5740c60002",
+        "userName": "测试",
+        "nickName": "测试",
+        "avatarUrl": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL42P0KLPVNYfj0aYeCv7yaicSYWBclSb3cHFIahRAezWHosSgECibDPsBDSQOZxE5UPzd9yhQF8g5w/132"
+      }
+    ],
     pictures: [],
     priceCount: 0,
     serviceType: "测试家电",
@@ -55,7 +75,12 @@ Page({
       }
     })
   },
-
+  yes:function(e){
+    console.log("确定服务", e.currentTarget.dataset.userid);
+  },
+  no:function(e){
+    console.log("取消服务", e.currentTarget.dataset.userid);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
