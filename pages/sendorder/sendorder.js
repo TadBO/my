@@ -15,6 +15,7 @@ Page({
         categoryKey: '',
         categoryName: '',
         time: '',
+        date: '',
         userName: "",
         provinceName: "",
         cityName: "",
@@ -23,8 +24,8 @@ Page({
         telNumber: "",
         user_msg: 1,
         qqmapsdk: null,
-        lat: '',
-        lon: '',
+        lat: app.globalData.latitude,
+        lon: app.globalData.longitude,
         sendFlag: true
     },
     send: function (e) {
@@ -211,10 +212,14 @@ Page({
     ,
     bindDateChange(e) {
         this.setData({
+            date: e.detail.value
+        })
+    },
+    bindTimeChange(e) {
+        this.setData({
             time: e.detail.value
         })
-    }
-    ,
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -223,6 +228,10 @@ Page({
             key: 'K6HBZ-LXQCQ-NWK5Q-GWLI7-XXMFO-ABBP7'
         });
         this.getCategory();
+        this.setData({
+            lon: app.globalData.longitude,
+            lat: app.globalData.latitude
+        })
     }
     ,
 

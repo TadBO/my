@@ -6,10 +6,11 @@
   border-top:0;
 }
 
-.weui-input {
-  font-size: 32rpx;
+.weui-input, .weui-textarea, .weui-select {
+  font-size: 28rpx;
+  color: #333;
 }
 
-.weui-select {
-  font-size: 32rpx;
+.weui-label  {
+  font-size: 30rpx;
 }

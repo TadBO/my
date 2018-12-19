@@ -52,6 +52,8 @@ Page({
                             success(res) {
                                 const latitude = res.latitude
                                 const longitude = res.longitude
+                                app.globalData.latitude = latitude;
+                                app.globalData.longitude = longitude;
                                 that.setData({
                                     latitude: latitude,
                                     longitude: longitude,

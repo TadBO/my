@@ -5,7 +5,6 @@
     "pages/orderdetails/orderdetails",
     "pages/sendprice/sendprice",
     "pages/sendorder/sendorder",
-    "pages/center",
     "pages/center/center",
     "pages/send/send",
     "pages/order/order",

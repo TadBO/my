@@ -68,6 +68,8 @@ App({
     globalData: {
         userInfo: null,
         url: "http://47.100.23.67:8080",
-        token: ""
+        token: "",
+        latitude: '',
+        longitude: ''
     }
 })

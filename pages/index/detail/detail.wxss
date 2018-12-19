@@ -94,6 +94,11 @@
     text-align: center;
 }
 
-.weui-cell__ft {
+.weui-cell__bd {
     font-size: 30rpx;
+}
+
+.weui-cell__ft {
+    font-size: 28rpx;
+    color: #333;
 }
